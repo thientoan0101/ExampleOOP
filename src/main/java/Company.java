@@ -1,10 +1,10 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Company {
-
     ArrayList<Vehicle> vehicles;
 
     public Company() {
@@ -90,7 +90,7 @@ public class Company {
         return Math.sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
     }
 
-    public Vehicle mostSuitableVehicle(GPS customerGpsLocation, int typeCondition) {
+    public Vehicle mostSuitableVehicle(GPS customerGpsLocation, GPS startGPS, GPS destinationGPS,int typeCondition, int seat, int capacity) {
         int idx = 1;
         double minDistance = calDistance(vehicles.get(0).getCurrentGPS(), customerGpsLocation);
 
@@ -100,11 +100,17 @@ public class Company {
             if (typeCondition == 3) {       // truck
                 // check capacity...???
                 // if (capicity ???)
-
-                if (distance < minDistance) {
+//                if ( == capacity)
+                Truck truck = (Truck) vehicles.get(i);
+                if (truck.getCapacity() == capacity && distance < minDistance) {
                     minDistance = distance;
                     idx = i;
                 }
+
+//                if (distance < minDistance) {
+//                    minDistance = distance;
+//                    idx = i;
+//                }
             } else if (typeCondition == 2) {
                 // check slot...???
                 // if (slot ???)

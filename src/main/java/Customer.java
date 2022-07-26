@@ -42,7 +42,6 @@ public class Customer {
 
     // other methods:
     public void callBooking() {
-        int option;
         System.out.println("Chon loai phuong tien muon chon: ");
         System.out.println("1. Xe may");
         System.out.println("2. Oto");
@@ -52,15 +51,34 @@ public class Customer {
         System.out.println("Chon load xe so: ");
         int selectedType = scanner.nextInt();
 
-        Vehicle bookedVehicle;
+        int seat, capacity;
+
         if (selectedType == 1) {
-            // select vehicle match condition
-//            bookedVehicle =
+            // nothing todo
         } else if (selectedType == 2) {
-
+            System.out.println("nhap cho ngoi: ");
+            seat = scanner.nextInt();
         } else {
-
+            System.out.println("nhap capacity: ");
+            capacity = scanner.nextInt();
         }
+
+//        System.out.println("nhap diem bat dau: ");
+//        System.out.println("nhap batdau x: ");
+//        double startX = scanner.nextDouble();
+//        System.out.println("nhap batdau y: ");
+//        double startY = scanner.nextDouble();
+        startGPS = GPS.inputGPS();
+        destinationGPS = GPS.inputGPS();
+
+        System.out.println("nhap diem ketthuc: ");
+        System.out.println("nhap kt x: ");
+        double desX = scanner.nextDouble();
+        System.out.println("nhap kt y: ");
+        double desY = scanner.nextDouble();
+        destinationGPS = new GPS(desX, desY);
+
+//        Vehicle bookedVehicle = findVehicleSuitable();
 
 
     }

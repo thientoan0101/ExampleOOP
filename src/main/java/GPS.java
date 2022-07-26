@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class GPS {
     double x;
     double y;
@@ -33,4 +35,13 @@ public class GPS {
         this.y = y;
     }
 
+    public static GPS inputGPS() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("nhap x: ");
+        double x = scanner.nextDouble();
+        System.out.println("nhap y: ");
+        double y = scanner.nextDouble();
+        GPS newGPS = new GPS(x, y);
+        return newGPS;
+    }
 }
